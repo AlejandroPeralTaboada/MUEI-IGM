@@ -38,7 +38,7 @@ def loop(iterations,function):
 
 
 def areaCirculo(radio):
-    return lambda x,y :x ** 2 + y ** 2 <= radio
+    return lambda x,y :x ** 2 + y ** 2 <= radio**2
 
 def area1(x,y):
     return areaCirculo(1)(x,y)
@@ -54,10 +54,10 @@ def test2():
     return test1()-(alpha-math.sin(alpha))
 
 def area3(x,y):
-    return (area1(x,y) and not areaCirculo(0.5)(x,y))
+    return (area2(x,y) and not areaCirculo(0.5)(x,y))
 
 def test3():
-    return test2()-math.pi*0.5**2
+    return test2()-(math.pi*(0.5**2))
 
 def calcularAreaFuncion(iteraciones,funcion):
     return 4.*float(loop(iteraciones,funcion))/float(iteraciones)
